@@ -1,0 +1,32 @@
+procedure prepare_H_from_G(n1,n2,mG,u[],v[]) callbacks {
+   procedure size_of_H(nH,mH);
+   procedure add_edge(u,v,w);
+   procedure set_s(s);
+   procedure set_t(t);
+}
+
+procedure max_card_matching_and_min_node_cover_in_G(n1,n2,mG,u[],v[]) callbacks {
+   procedure put_in_matching(u,v);
+   procedure put_in_node_cover_on_side_U(u);
+   procedure put_in_node_cover_on_side_V(v);
+   function flow_val(u,v);
+}
+
+procedure min_node_cover_from_min_cut(n1,n2) callbacks {
+   procedure put_in_node_cover_on_side_U(u);
+   procedure put_in_node_cover_on_side_V(v);
+   function min_cut_value();   
+   function next_in_min_cut_left();   
+   function next_in_min_cut_right();   
+}
+
+main {
+    read n1, n2, mG;
+    for e to mG {
+      read u[e];
+      read v[e];
+    }
+    call prepare_H_from_G(n1,n2,mG,u,v);
+    call max_card_matching_and_min_node_cover_in_G(n1,n2,mG,u,v);
+    call min_node_cover_from_min_cut(n1,n2);
+}
