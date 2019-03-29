@@ -248,7 +248,7 @@ def main():
     ta.goals.setdefault("min_node_cover", True)
     ta.goals.setdefault("min_node_cover_from_min_cut", True)
 
-    for n in ((100,50), (150,200), (200,200)):
+    for n_u,n_v in ((100,50), (150,200), (200,200)):
         for m in (100, 150, 200):
             if test_case(n_u,n_v,m)<3:
                 ta.goals["min_node_cover_from_min_cut"] = False
@@ -260,7 +260,7 @@ def main():
     ta.goals.setdefault("min_node_cover", True)
     ta.goals.setdefault("min_node_cover_from_min_cut", True)
 
-    for n in ((1000,500), (1500,2000), (2000,2000)):
+    for n_u,n_v in ((1000,500), (1500,2000), (2000,2000)):
         for m in (1000, 1500, 2000):
             if test_case(n_u,n_v,m)<3:
                 ta.goals["min_node_cover_from_min_cut"] = False
