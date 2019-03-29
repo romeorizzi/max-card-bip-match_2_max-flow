@@ -11,7 +11,7 @@ DEBUG = False
 # - cubica      O(M^2 * N)  N <= 20, M <= 20
 
 def test_case(n_u, n_v, m):
-    print(f"Evaluating test case: N_U = {n_u}, N_V = {n_u}, M = {m}...  "#)\t", end="")
+    print(f"Evaluating test case: N_U = {n_u}, N_V = {n_u}, M = {m}...  ")#)\t", end="")
 
     res = 0
 
@@ -264,7 +264,7 @@ def main():
 
     for n_u,n_v in ((1000,500), (1500,2000), (2000,2000)):
         for m in (1000, 1500, 2000):
-            ret = test_case(n_u,n_v,m) 
+            ret = test_case(n_u,n_v,m)
             if ret<3:
                 ta.goals["min_node_cover_from_min_cut"] = False
             if ret<2:
