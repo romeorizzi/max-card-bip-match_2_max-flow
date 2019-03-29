@@ -15,9 +15,9 @@ procedure max_card_matching_and_min_node_cover_in_G(n1,n2,mG,u[],v[]) callbacks 
 procedure min_node_cover_from_min_cut(n1,n2) callbacks {
    procedure put_in_node_cover_on_side_U(u);
    procedure put_in_node_cover_on_side_V(v);
-   function min_cut_value();   
-   function next_in_min_cut_left();   
-   function next_in_min_cut_right();   
+   function min_cut_value();
+   function next_in_min_cut_left();
+   function next_in_min_cut_right();
 }
 
 main {

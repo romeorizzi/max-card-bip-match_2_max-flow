@@ -1,0 +1,16 @@
+[problem]
+title = "Riduzione del problema del massimo matching in grafo bipartito al problema del flusso di massimo valore in un grafo non pesato"
+
+[parameters]
+N = 2000
+M = 2000
+
+[scoring]
+goals = [
+    "max_card_matching",
+    "min_node_cover",
+    "min_node_cover_from_min_cut"
+    ]
+
+[files]
+public_paths = ["interface.txt", "evaluator.py"]
