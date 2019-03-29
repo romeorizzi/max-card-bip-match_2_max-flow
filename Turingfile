@@ -2,7 +2,7 @@
 title = "Riduzione del problema del massimo matching in grafo bipartito al problema del flusso di massimo valore in un grafo non pesato"
 
 [parameters]
-N = 2000
+N = 4000
 M = 2000
 
 [scoring]
