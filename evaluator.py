@@ -13,7 +13,7 @@ DEBUG = False
 def test_case(n_u, n_v, m):
     print(f"Evaluating test case: N_U = {n_u}, N_V = {n_u}, M = {m}...  ")#)\t", end="")
 
-    res = 0
+    res = 1
 
     N = n_u
     M = n_v
@@ -141,9 +141,9 @@ def test_case(n_u, n_v, m):
 
                 # The matching is correct
                 print("[CORRECT]")
-                res = 1
+                res = res * 2
             except Exception as e:
-                print(f"[WRONG] error: {e}")
+                print(f"[WRONG] \t error: {e}")
 
 
 
@@ -163,10 +163,10 @@ def test_case(n_u, n_v, m):
                 # The node cover is correct
 
                 print("[CORRECT]")
-                res = 2
+                res = res * 3
 
             except Exception as e:
-                print(f"[WRONG] error: {e}")
+                print(f"[WRONG] \t error: {e}")
 
             # compute the minimum cut
 
@@ -235,14 +235,14 @@ def test_case(n_u, n_v, m):
                 # The node cover is correct
 
                 print("[CORRECT]")
-                res = 3
+                res = res * 5
 
             except Exception as e:
-                print(f"[WRONG] error: {e}")
+                print(f"[WRONG] \t error: {e}")
 
 
     except Exception as e:
-        print(f"[WRONG] error: {e}")
+        print(f"[WRONG] \t error: {e}")
 
     if res == 3:
         print(f"test case: N_U = {n_u}, N_V = {n_u}, M = {m} [PASSED]")
@@ -253,11 +253,11 @@ def main():
     for n_u,n_v in ((10,5), (15,20), (20,20)):
         for m in (10, 15, 20):
             ret = test_case(n_u,n_v,m)
-            if ret < 3:
+            if ret%5:
                 ta.goals["min_node_cover_from_min_cut"] = False
-            if ret<2:
+            if ret%3:
                 ta.goals["min_node_cover"] = False
-            if ret<1:
+            if ret%2:
                 ta.goals["max_card_matching"] = False
     ta.goals.setdefault("max_card_matching", True)
     ta.goals.setdefault("min_node_cover", True)
@@ -266,11 +266,11 @@ def main():
     for n_u,n_v in ((100,50), (150,200), (200,200)):
         for m in (100, 150, 200):
             ret = test_case(n_u,n_v,m)
-            if ret<3:
+            if ret%5:
                 ta.goals["min_node_cover_from_min_cut"] = False
-            if ret<2:
+            if ret%3:
                 ta.goals["min_node_cover"] = False
-            if ret<1:
+            if ret%2:
                 ta.goals["max_card_matching"] = False
     ta.goals.setdefault("max_card_matching", True)
     ta.goals.setdefault("min_node_cover", True)
@@ -279,11 +279,11 @@ def main():
     for n_u,n_v in ((1000,500), (1500,2000), (2000,2000)):
         for m in (1000, 1500, 2000):
             ret = test_case(n_u,n_v,m)
-            if ret<3:
+            if ret%5:
                 ta.goals["min_node_cover_from_min_cut"] = False
-            if ret<2:
+            if ret%3:
                 ta.goals["min_node_cover"] = False
-            if ret<1:
+            if ret%2:
                 ta.goals["max_card_matching"] = False
 
     ta.goals.setdefault("max_card_matching", True)
