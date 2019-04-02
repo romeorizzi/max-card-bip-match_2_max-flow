@@ -13,7 +13,7 @@ def prepare_H_from_G(n1, n2, mG, u, v, size_of_H, add_edge, set_s, set_t):
     for i  in range(n1):
         add_edge(s,i,1)
 
-    for i  in range(n1,n2):
+    for i  in range(n1,n1+n2):
         add_edge(i,t,1)
     pass
 
