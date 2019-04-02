@@ -1,5 +1,3 @@
-import networkx as nx
-from networkx.algorithms import bipartite
 
 def prepare_H_from_G(n1, n2, mG, u, v, size_of_H, add_edge, set_s, set_t):
 
