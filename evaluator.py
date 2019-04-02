@@ -143,8 +143,7 @@ def test_case(n_u, n_v, m):
                 print("[CORRECT]")
                 res = 1
             except Exception as e:
-                print(f" error: {e}")
-                print("[WRONG]")
+                print(f"[WRONG] error: {e}")
 
 
 
@@ -167,8 +166,7 @@ def test_case(n_u, n_v, m):
                 res = 2
 
             except Exception as e:
-                print(f" error: {e}")
-                print("[WRONG]")
+                print(f"[WRONG] error: {e}")
 
             # compute the minimum cut
 
@@ -240,12 +238,11 @@ def test_case(n_u, n_v, m):
                 res = 3
 
             except Exception as e:
-                print(f" error: {e}")
-                print("[WRONG]")
-                
+                print(f"[WRONG] error: {e}")
+
+
     except Exception as e:
-        print(f" error: {e}")
-        print("[WRONG]")
+        print(f"[WRONG] error: {e}")
 
     if res == 3:
         print(f"test case: N_U = {n_u}, N_V = {n_u}, M = {m} [PASSED]")
