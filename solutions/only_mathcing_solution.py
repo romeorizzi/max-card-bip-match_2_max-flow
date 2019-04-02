@@ -25,7 +25,6 @@ def max_card_matching_and_min_node_cover_in_G(n1, n2, mG, u, v, put_in_matching,
         nu = u[i]
         nv = v[i]
         if flow_val(nu,nv) == 1:
-            # is_unmatched[nu] = false
             put_in_matching(nu,nv)
 
     pass
