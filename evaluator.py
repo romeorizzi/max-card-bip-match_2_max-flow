@@ -119,44 +119,56 @@ def test_case(n_u, n_v, m):
 
             print("Evaluating the matching... \t", end="")
 
-            # check the matching
-            if max_flow != len(matching):
-                raise Exception('matching is not massimal')
+            try:
+                # check the matching
+                if max_flow != len(matching):
+                    raise Exception('matching is not massimal')
 
-            from_set = set()
-            to_set = set()
-            for u, v in matching:
-                # is a valid edge
-                if not G.has_edge(u,v):
-                    raise Exception('({},{}) is not an edge'.format(v,u))
+                from_set = set()
+                to_set = set()
+                for u, v in matching:
+                    # is a valid edge
+                    if not G.has_edge(u,v):
+                        raise Exception('({},{}) is not an edge'.format(v,u))
 
-                # single matching for every node
-                if u in from_set:
-                    raise Exception('multiple matching for u={}'.format(u))
-                from_set.add(u)
-                if v in to_set:
-                    raise Exception('multiple matching for v={}'.format(v))
-                to_set.add(v)
+                    # single matching for every node
+                    if u in from_set:
+                        raise Exception('multiple matching for u={}'.format(u))
+                    from_set.add(u)
+                    if v in to_set:
+                        raise Exception('multiple matching for v={}'.format(v))
+                    to_set.add(v)
 
-            # The matching is correct
+                # The matching is correct
+                print("[CORRECT]")
+                res = 1
+            except Exception as e:
+                print(f" error: {e}")
+                print("[WRONG]")
 
-            print("[CORRECT]")
-            res = 1
+
+
+
             print("Evaluating the node cover... \t", end="")
 
-            # check the node cover
-            if max_flow != (len(cover_on_U) + len(cover_on_V)):
-                raise Exception('wrong size of cover, {} vs {}'.format(
-                    max_flow,(len(cover_on_U) + len(cover_on_V))))
+            try:
+                # check the node cover
+                if max_flow != (len(cover_on_U) + len(cover_on_V)):
+                    raise Exception('wrong size of cover, {} vs {}'.format(
+                        max_flow,(len(cover_on_U) + len(cover_on_V))))
 
-            for (x,y) in G.edges:
-                if not x in cover_on_U and not y in cover_on_V:
-                    raise Exception('edges ({},{}) is not covered'.format(x,y))
+                for (x,y) in G.edges:
+                    if not x in cover_on_U and not y in cover_on_V:
+                        raise Exception('edges ({},{}) is not covered'.format(x,y))
 
-            # The node cover is correct
+                # The node cover is correct
 
-            print("[CORRECT]")
-            res = 2
+                print("[CORRECT]")
+                res = 2
+
+            except Exception as e:
+                print(f" error: {e}")
+                print("[WRONG]")
 
             # compute the minimum cut
 
@@ -212,20 +224,25 @@ def test_case(n_u, n_v, m):
                         ])
 
             print("Evaluating the node cover... \t", end="")
-            # check the node cover
-            if max_flow != (len(cover_on_U) + len(cover_on_V)):
-                raise Exception('wrong size of cover, {} vs {}'.format(
-                    max_flow,(len(cover_on_U) + len(cover_on_V))))
+            try:
+                # check the node cover
+                if max_flow != (len(cover_on_U) + len(cover_on_V)):
+                    raise Exception('wrong size of cover, {} vs {}'.format(
+                        max_flow,(len(cover_on_U) + len(cover_on_V))))
 
-            for (x,y) in G.edges:
-                if not x in cover_on_U and not y in cover_on_V:
-                    raise Exception('edges ({},{}) is not covered'.format(x,y))
+                for (x,y) in G.edges:
+                    if not x in cover_on_U and not y in cover_on_V:
+                        raise Exception('edges ({},{}) is not covered'.format(x,y))
 
-            # The node cover is correct
+                # The node cover is correct
 
-            print("[CORRECT]")
-            res = 3
+                print("[CORRECT]")
+                res = 3
 
+            except Exception as e:
+                print(f" error: {e}")
+                print("[WRONG]")
+                
     except Exception as e:
         print(f" error: {e}")
         print("[WRONG]")
