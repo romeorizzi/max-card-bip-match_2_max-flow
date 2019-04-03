@@ -2,16 +2,16 @@ import turingarena as ta
 import networkx as nx
 from networkx.algorithms import bipartite
 
-DEBUG = True
+DEBUG = False
 
 # Goals:
-# time limit = 0.2s
-# - lineare     O(M + N)    N <= 2000, M <= 2000
-# - quadratica  O(M * N)    N <= 200, M <= 200
-# - cubica      O(M^2 * N)  N <= 20, M <= 20
+# time limit = 0.05s
+# - max_card_matching
+# - min_node_cover
+# - min_node_cover_from_min_cut   
 
 def test_case(n_u, n_v, m):
-    print(f"Evaluating test case: N_U = {n_u}, N_V = {n_u}, M = {m}...  ")#)\t", end="")
+    print(f"\nEvaluating test case: N_U = {n_u}, N_V = {n_u}, M = {m}...  ")#)\t", end="")
 
     res = 1
 
