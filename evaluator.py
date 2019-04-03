@@ -2,7 +2,7 @@ import turingarena as ta
 import networkx as nx
 from networkx.algorithms import bipartite
 
-DEBUG = False
+DEBUG = True
 
 # Goals:
 # time limit = 0.2s
@@ -240,7 +240,8 @@ def test_case(n_u, n_v, m):
             except Exception as e:
                 print(f"[WRONG] \t error: {e}")
 
-
+        if DEBUG:
+            print(f"Time usage: {p.time_usage}")
     except Exception as e:
         print(f"[WRONG] \t error: {e}")
 
