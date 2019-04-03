@@ -27,7 +27,7 @@ def test_case(n_u, n_v, m):
     U,V = range(0,N), range(N,N+M)
 
     try:
-        with ta.run_algorithm(ta.submission.source, time_limit=0.15) as p:
+        with ta.run_algorithm(ta.submission.source, time_limit=0.05) as p:
             # build the graphs
             n1 = len(U)
             n2 = len(V)
