@@ -1,3 +1,4 @@
+import math
 
 def prepare_H_from_G(n1, n2, mG, u, v, size_of_H, add_edge, set_s, set_t):
 
@@ -26,6 +27,9 @@ def max_card_matching_and_min_node_cover_in_G(n1, n2, mG, u, v, put_in_matching,
         nv = v[i]
         if flow_val(nu,nv) == 1:
             put_in_matching(nu,nv)
+
+    for i in range((mG)*int(math.sqrt(n1+n2))):
+        tmp = i
 
     pass
 

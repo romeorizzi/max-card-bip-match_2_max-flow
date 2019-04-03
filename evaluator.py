@@ -27,7 +27,7 @@ def test_case(n_u, n_v, m):
     U,V = range(0,N), range(N,N+M)
 
     try:
-        with ta.run_algorithm(ta.submission.source, time_limit=0.2) as p:
+        with ta.run_algorithm(ta.submission.source, time_limit=0.18) as p:
             # build the graphs
             n1 = len(U)
             n2 = len(V)
@@ -244,8 +244,11 @@ def test_case(n_u, n_v, m):
     except Exception as e:
         print(f"[WRONG] \t error: {e}")
 
-    if res == 3:
+    if res == 2*3*5:
         print(f"test case: N_U = {n_u}, N_V = {n_u}, M = {m} [PASSED]")
+    else:
+        print(f"test case: N_U = {n_u}, N_V = {n_u}, M = {m} [FAILED]")
+
     return res
 
 
