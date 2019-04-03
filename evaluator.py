@@ -5,10 +5,10 @@ from networkx.algorithms import bipartite
 DEBUG = False
 
 # Goals:
-# time limit = 0.05s
+# time limit = 0.15s
 # - max_card_matching
 # - min_node_cover
-# - min_node_cover_from_min_cut   
+# - min_node_cover_from_min_cut
 
 def test_case(n_u, n_v, m):
     print(f"\nEvaluating test case: N_U = {n_u}, N_V = {n_u}, M = {m}...  ")#)\t", end="")
@@ -27,7 +27,7 @@ def test_case(n_u, n_v, m):
     U,V = range(0,N), range(N,N+M)
 
     try:
-        with ta.run_algorithm(ta.submission.source, time_limit=0.05) as p:
+        with ta.run_algorithm(ta.submission.source, time_limit=0.15) as p:
             # build the graphs
             n1 = len(U)
             n2 = len(V)
